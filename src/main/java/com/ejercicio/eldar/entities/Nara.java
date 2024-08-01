@@ -2,6 +2,7 @@ package com.ejercicio.eldar.entities;
 
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 
 @Data
@@ -17,7 +18,7 @@ public class Nara implements Marca {
 
     @Override
     public double calcularTasa() {
-        Calendar fechaActual = Calendar.getInstance();
-        return fechaActual.get(Calendar.DAY_OF_MONTH) * this.indice;
+        int diaMesActual = LocalDate.now().getDayOfMonth();
+        return diaMesActual * this.indice;
     }
 }

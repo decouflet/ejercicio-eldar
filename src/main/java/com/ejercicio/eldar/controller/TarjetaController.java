@@ -18,7 +18,7 @@ public class TarjetaController {
     public OperacionResponse tasaOperacion(@PathVariable(value = "monto") Integer monto, @Valid @RequestBody Tarjeta tarjeta) {
         this.validaciones(tarjeta, monto);
 
-        return new OperacionResponse(tarjeta.getMarca().calcularTasa(),
+        return new OperacionResponse(tarjeta.informarTasa(),
                 tarjeta.getMarca().getNombre(),
                 monto);
     }

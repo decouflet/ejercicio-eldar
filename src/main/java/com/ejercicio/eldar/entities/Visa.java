@@ -2,7 +2,7 @@ package com.ejercicio.eldar.entities;
 
 import lombok.Data;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 @Data
 public class Visa implements Marca{
@@ -15,14 +15,8 @@ public class Visa implements Marca{
 
     @Override
     public double calcularTasa() {
-        Calendar fechaActual = Calendar.getInstance();
-
-        String anio = Integer.toString(fechaActual.get(Calendar.YEAR));
-        // Tomamos los ultimos dos valores del anio actual
-        double anio_tasa = Double.parseDouble(anio.substring(2));
-
-        int mes = 1 + fechaActual.get(Calendar.MONTH);
-
-        return anio_tasa / mes;
+        double anioActual = Double.parseDouble(Integer.toString(LocalDate.now().getYear()).substring(2,4));
+        double mesActual = LocalDate.now().getMonthValue();
+        return anioActual / mesActual;
     }
 }

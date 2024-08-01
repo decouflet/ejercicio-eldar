@@ -7,9 +7,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         use = JsonTypeInfo.Id.NAME,
         property = "tipo")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = Amex.class, name = "Amex"),
-        @JsonSubTypes.Type(value = Nara.class, name = "Nara"),
-        @JsonSubTypes.Type(value = Visa.class, name = "Visa")
+        @JsonSubTypes.Type(value = Amex.class, name = Constantes.AMEX),
+        @JsonSubTypes.Type(value = Nara.class, name = Constantes.NARA),
+        @JsonSubTypes.Type(value = Visa.class, name = Constantes.VISA)
 })
 public interface Marca {
 

@@ -14,15 +14,15 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Tarjeta {
-    @NotNull(message = "El numero de tarjeta no puede estar vacio.")
+    @NotNull(message = Constantes.NUMERO_TARJETA_VACIO)
     Long numeroTarjeta;
 
     String cardHolder;
 
-    @NotNull(message = "La fecha no puede ser nula.")
+    @NotNull(message = Constantes.FECHA_VENCIMIENTO_VACIA)
     LocalDate fechaVencimiento;
 
-    @NotNull(message = "La tarjeta debe tener una marca.")
+    @NotNull(message = Constantes.MARCA_VACIA)
     Marca marca;
 
     public double informarTasa() {

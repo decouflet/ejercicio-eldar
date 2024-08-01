@@ -1,5 +1,6 @@
 package com.ejercicio.eldar.entities;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,9 +14,15 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Tarjeta {
-    Long id;
+    @NotNull(message = "El numero de tarjeta no puede estar vacio.")
+    Long numeroTarjeta;
+
     String cardHolder;
+
+    @NotNull(message = "La fecha no puede ser nula.")
     LocalDate fechaVencimiento;
+
+    @NotNull(message = "La tarjeta debe tener una marca.")
     Marca marca;
 
     public double informarTasa() {
@@ -23,7 +30,7 @@ public class Tarjeta {
     }
 
     static public String tarjetasDistintas(Tarjeta tarjeta_1, Tarjeta tarjeta_2) {
-        if (!tarjeta_1.getId().equals(tarjeta_2.getId())) {
+        if (!tarjeta_1.getNumeroTarjeta().equals(tarjeta_2.getNumeroTarjeta())) {
             return Constantes.TARJETAS_DISTINTAS;
         } else {
             return Constantes.TARJETAS_IGUALES;
@@ -36,7 +43,7 @@ public class Tarjeta {
     }
 
     public boolean operacionValida(Integer monto) {
-        return monto < 1000;
+        return monto < Constantes.MONTO_MAXIMO;
     }
 
 }

@@ -11,6 +11,4 @@ public class OperacionResponse {
     double tasa;
     String marca;
     Integer importe;
-    Boolean operacionValida;
-    Boolean tarjetaValida;
 }

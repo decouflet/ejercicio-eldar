@@ -11,7 +11,7 @@ public class Nara implements Marca {
     String nombre;
 
     public Nara() {
-        this.indice = 0.5;
+        this.indice = Constantes.INDICE_NARA;
         this.nombre = Constantes.NARA;
     }
 

@@ -11,7 +11,7 @@ public class Amex implements Marca {
     String nombre;
 
     public Amex() {
-        this.indice = 0.1;
+        this.indice = Constantes.INDICE_AMEX;
         this.nombre = Constantes.AMEX;
     }
 

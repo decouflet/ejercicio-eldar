@@ -6,6 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Log
 @SpringBootApplication
@@ -32,6 +35,15 @@ public class EldarApplication {
 			Las validaciones de las operaciones y de tarjetas validas para operar
 			ocurren en la llamada al endpoint "tasaOperacion".
 		*/
+
+
+		//EJERCICIO 5:
+
+		String[] my_array = new String[] {"FirstWord", "SecondWord", "THIRDWORD"};
+		List<String> my_array_lower_case = Arrays.stream(my_array).map(String::toLowerCase).collect(Collectors.toList());
+		String my_string = String.join(" ", my_array_lower_case);
+		System.out.println(my_string);
+
 	}
 
 }

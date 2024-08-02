@@ -13,7 +13,7 @@
       El resto de los campos se colocan de la manera clasica (solo el String)
     - El campo "fechaVencimiento" debe respetar el formato YYYY-MM-DD
 
-- HIPOTESIS:
+- CONSIDERACIONES:
     - Como las excepciones en caso de que la tarjeta no sea valida o la operacion sea no valida pueden desencadenar distinto escenarios opté por crear responses distintos para ambos casos,
       aumentando la repiticion de codigo pero priorizando la escalabilidad
 

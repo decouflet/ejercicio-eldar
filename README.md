@@ -9,7 +9,16 @@
       "marca" : {
           "tipo" : "AMEX"
         }
-      }
+      }. 
+      JSON de ejemplo para una operacion valida:
+      {
+    "numeroTarjeta" : 1,
+    "cardHolder" : "Jorge Ortega",
+    "fechaVencimiento" : "2024-12-21",
+    "marca" : {
+        "tipo" : "NARA"
+    }
+}. 
       El resto de los campos se colocan de la manera clasica (solo el String)
     - El campo "fechaVencimiento" debe respetar el formato YYYY-MM-DD
 
